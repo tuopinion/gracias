@@ -1,127 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Universal Importaciones</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Agregar Font Awesome para íconos de estrella -->
-<style>
-    body {
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        background-color: #006bd6; /* Color de fondo azul anterior */
-        color: #FFFFFF; /* Texto blanco */
-    }
-    h1, h2, h3 {
-        margin: 10px;
-    }
-    #votacion {
-        margin-top: 50px;
-    }
-    .stars {
-        display: flex;
-        justify-content: center;
-        flex-direction: row-reverse; /* Cambiar la dirección de las estrellas */
-        margin-bottom: 20px;
-    }
-    .stars input[type="radio"] {
-        display: none;
-    }
-    .stars label {
-        font-size: 5em;
-        color: #ddd;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-    .stars label:hover,
-    .stars input[type="radio"]:checked ~ label,
-    .stars input[type="radio"]:hover ~ label {
-        color: #ffd700; /* Color de estrella seleccionada */
-    }
-    #feedback-box {
-        margin-bottom: 20px;
-    }
-    #feedback-box textarea {
-        width: 80%;
-        max-width: 600px;
-        margin: 0 auto;
-        border-radius: 5px; /* Redondear bordes de la textarea */
-        padding: 10px;
-    }
-    #feedback-box button {
-        margin-top: 10px;
-        background-color: #ff03a7; /* Color del botón */
-        color: #FFFFFF; /* Texto blanco */
-        font-size: 14px; /* Tamaño del texto */
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px; /* Redondear bordes del botón */
-    }
-    #mensaje-final {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #FFFFFF;
-        padding: 50px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 9999;
-    }
-    #footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-    }
-    #footer p {
-        margin: 5px;
-    }
-    #footer a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2em;
-        margin: 0 10px;
-    }
-    #footer a:hover {
-        text-decoration: underline;
-    }
-    #footer .icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
 
-    @media only screen and (max-width: 600px) {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Importaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Agregar Font Awesome para íconos de estrella -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #006bd6; /* Color de fondo azul anterior */
+            color: #FFFFFF; /* Texto blanco */
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 10px;
+        }
+
+        #votacion {
+            margin-top: 50px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse; /* Cambiar la dirección de las estrellas */
+            margin-bottom: 20px;
+        }
+
+        .stars input[type="radio"] {
+            display: none;
+        }
+
         .stars label {
-            font-size: 3.5em;
+            font-size: 5em;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
         }
+
+        .stars label:hover,
+        .stars input[type="radio"]:checked~label,
+        .stars input[type="radio"]:hover~label {
+            color: #ffd700; /* Color de estrella seleccionada */
+        }
+
+        #feedback-box {
+            margin-bottom: 20px;
+        }
+
         #feedback-box textarea {
-            width: 90%;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 5px; /* Redondear bordes de la textarea */
+            padding: 10px;
         }
-    }
-</style>
+
+        #feedback-box button {
+            margin-top: 10px;
+            background-color: #ff03a7; /* Color del botón */
+            color: #FFFFFF; /* Texto blanco */
+            font-size: 14px; /* Tamaño del texto */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px; /* Redondear bordes del botón */
+        }
+
+        #mensaje-final {
+            background-color: #FFFFFF;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 5px;
+        }
+
+        #footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+        #footer .icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .stars label {
+                font-size: 3.5em;
+            }
+
+            #feedback-box textarea {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<img src="https://www.universalimportaciones.uy/assets/uni-logo-vert-trim-0f197ea90854816ad0f09338fb14b035b3165db7eaf7f2c9b5e5802c4bbf1403.png" alt="Logo de Universal Importaciones" style="width: 200px; height: auto; margin-top: 20px;">
+    <img src="https://www.universalimportaciones.uy/assets/uni-logo-vert-trim-0f197ea90854816ad0f09338fb14b035b3165db7eaf7f2c9b5e5802c4bbf1403.png" alt="Logo de Universal Importaciones" style="max-width: 100%; height: auto; margin-top: 20px;">
 
-<h2 style="color: #FFFFFF;">¡GRACIAS!</h2>
+    <h2>¡GRACIAS!</h2>
 
-<div id="mensaje-final">
-    <p style="color: black;">Agradecemos tu respuesta, tus comentarios son muy importantes para nosotros.</p>
-    <p style="color: black;">Ante cualquier Duda o Inconveniente con tu Compra</p>
-    <p style="color: black;">Contáctate Aqui</p>
-    <p style="color: black;"><a href="https://wa.me/59892478000" class="whatsapp-link"><i class="fab fa-whatsapp" style="color: lime;"></i> WhatsApp</a></p>
-</div>
+    <div id="mensaje-final">
+        <p>Agradecemos tu respuesta, tus comentarios son muy importantes para nosotros.</p>
+        <p>Ante cualquier Duda o Inconveniente con tu Compra</p>
+        <p>Contáctate Aqui</p>
+        <p><a href="https://wa.me/59892478000" class="whatsapp-link"><i class="fab fa-whatsapp" style="color: lime;"></i> WhatsApp</a></p>
+    </div>
+
+    <div id="footer">
+        <p>© 2024 Universal Importaciones</p>
+        <div class="icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
 
 </body>
+
 </html>
